@@ -1,5 +1,5 @@
 src
+jestCache
 tsconfig.json
-.eslinrc.js
+.eslintrc.js
 .prettierrc.json
-.editorconfig
