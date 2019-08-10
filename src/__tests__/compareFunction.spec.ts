@@ -1,4 +1,4 @@
-import { defaultCompareFunction } from './compareFunction';
+import { defaultCompareFunction } from '../utils/compareFunction';
 
 describe('defaultCompareFunction', () => {
   it('should return true if the first integer is less than the second', () => {
