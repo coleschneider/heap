@@ -1,0 +1,39 @@
+{
+  "name": "heap",
+  "version": "1.0.0",
+  "description": "Heap data structure with no dependencies",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "test:watch": "NODE_ENV=test jest --watch --config jest.config.js",
+    "clear-cache": "rimraf ./jestCache",
+    "lint": "eslint . --ext .ts,.tsx",
+    "prettier": "prettier --write **/**.{ts,tsx,json}",
+    "prepublish": "tsc",
+    "start": "tsc --watch & nodemon dist/index.js",
+    "build": "tsc"
+  },
+  "keywords": [
+    "Data Structures",
+    "typescript",
+    "heap",
+    "minheap",
+    "maxheap"
+  ],
+  "author": "Cole Schneider",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^24.0.17",
+    "@types/node": "^12.7.1",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  }
+}
