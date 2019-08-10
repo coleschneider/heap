@@ -1,10 +1,12 @@
 {
   "name": "typescript-heapify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Heap data structure with zero dependencies",
   "main": "dist/heap.js",
   "types": "dist/heap.d.ts",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/coleschneider/typescript-heapify"
