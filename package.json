@@ -4,6 +4,7 @@
   "description": "Heap data structure with zero dependencies",
   "main": "dist/heap.js",
   "types": "dist/heap.d.ts",
+  "files": ["dist/**/*"],
   "scripts": {
     "test": "npm run clear-cache && npm run coverage",
     "prepare": "npm run build",
