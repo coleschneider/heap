@@ -27,13 +27,4 @@ describe('Heap', () => {
       expect(arr).toEqual([13, 11, 12, 5, 6, 7]);
     });
   });
-  describe('Priority Queue', () => {
-    type QueueItem = [string, number];
-    it('should allow a pairwise comparison for priority queue', () => {
-      const { buildHeap } = Heap<QueueItem>((a, b) => a[1] > b[1]);
-
-      let arr = [['low', 0], ['medium', 5], ['high', 10]];
-      buildHeap(arr);
-    });
-  });
 });
