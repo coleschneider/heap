@@ -1,6 +1,6 @@
 {
   "name": "typescript-heapify",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Heap data structure with zero dependencies",
   "main": "dist/heap.js",
   "types": "dist/heap.d.ts",
