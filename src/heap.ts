@@ -26,10 +26,10 @@ function Heap<T>(compareFunction = defaultCompareFunction) {
       index = startIndex;
       leftChild = getLeftChildIndex(startIndex);
       rightChild = getRightChildIndex(startIndex);
-      if (leftChild < endIndex && compareFunction(list[leftChild], list[index])) {
+      if (leftChild < endIndex && compareFunction<T>(list[leftChild], list[index])) {
         index = leftChild;
       }
-      if (rightChild < endIndex && compareFunction(list[rightChild], list[index])) {
+      if (rightChild < endIndex && compareFunction<T>(list[rightChild], list[index])) {
         index = rightChild;
       }
       if (index === startIndex) {
@@ -59,7 +59,7 @@ function Heap<T>(compareFunction = defaultCompareFunction) {
     while (position > startIndex) {
       const parentIndex = (position - 1) >> 1;
       const parent = heap[parentIndex];
-      if (compareFunction(newItem, parent)) {
+      if (compareFunction<T>(newItem, parent)) {
         heap[position] = parent;
         position = parentIndex;
         continue;
@@ -72,9 +72,31 @@ function Heap<T>(compareFunction = defaultCompareFunction) {
     heap.push(item);
     siftDown(heap, 0, heap.length - 1);
   }
+
+  function peak<t>(heap: T[]) {
+    if (heap.length === 0) {
+      return null;
+    }
+    return heap[0];
+  }
+  function poll<T>(heap: T[]) {
+    if (heap.length === 0) {
+      return null;
+    } else if (heap.length === 1) {
+      return heap.pop();
+    } else {
+      const item = heap[0];
+      // Make the last item the fist
+      heap[0] = heap.pop() as T;
+      siftDown(heap, 0, heap.length - 1);
+      return item;
+    }
+  }
   return {
     heapify,
     buildHeap,
+    peak,
+    poll,
     push,
     swap,
     getLeftChildIndex,

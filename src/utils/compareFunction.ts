@@ -9,5 +9,8 @@
 export function defaultCompareFunction<T>(a: T, b: T) {
   return a <= b;
 }
-type CompareFunction<T> = (a: T, b: T) => boolean;
+export function initCompareFunction<T>(a: T, b: T) {
+  return { comparator: defaultCompareFunction(a, b) };
+}
+export type CompareFunction<T> = (a: T, b: T) => boolean;
 export type OptionalCallbacks<T> = CompareFunction<T> | { comparator: CompareFunction<T> };
